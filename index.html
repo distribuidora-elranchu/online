@@ -129,12 +129,13 @@
 
         /* Imagen ajustada para logo e imágenes de secciones */
         .img-logo {
-        display: block;  /* elimina espacio en línea */
-    width: 100%;     /* ocupa todo el ancho del contenedor */
-    max-height: 80px; /* limita la altura para que no crezca demasiado */
-    height: auto;    /* mantiene proporción */
-    margin: 0;  /* centra la imagen */
-    object-fit: contain; /* ajusta sin deformar */
+        display: block;         /* elimina espacio en línea */
+    width: auto;            /* deja que la imagen tome su tamaño natural o ajusta con max-width */
+    max-height: 80px;       /* limita la altura */
+    height: auto;           /* mantiene proporción */
+    margin: 0;              /* sin margen, alinea a la izquierda */
+    object-fit: contain;    /* ajusta sin deformar */
+    float: left;            /* para que se alinee a la izquierda */
         }
 
         .section-image {
