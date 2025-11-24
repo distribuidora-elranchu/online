@@ -32,6 +32,8 @@
 
         header {
             background-color: var(--color-primario);
+        padding: 0.5rem 1rem;
+        text-align: center;
         }
 
         nav a {
@@ -129,7 +131,11 @@
 
         /* Imagen ajustada para logo e imágenes de secciones */
         .img-logo {
-            height: 60px;
+        width: 100%;          
+        height: auto;         
+        max-height: 80px;     
+        object-fit: contain;  
+        display: inline-block;
         }
 
         .section-image {
