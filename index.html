@@ -30,9 +30,21 @@
             color: var(--color-primario);
         }
 
-    header {
-            background-color: var(--color-primario);
-        }
+    <header>
+    <div style="background-color: var(--color-primario); padding: 0.5rem 1rem;">
+        <img src="https://i.ibb.co/tPb6wNLt/Logo.jpg" alt="Logo Distribuidora El Ranchú" class="img-logo" />
+    </div>
+    <nav class="bg-primary py-2">
+        <div class="container d-flex justify-content-center">
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link text-white" href="#bienvenida">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#productos">Productos</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#sobre-nosotros">Sobre Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
         nav a {
             color: white !important;
@@ -129,14 +141,13 @@
 
         /* Imagen ajustada para logo e imágenes de secciones */
         .img-logo {
-        display: block;         /* elimina espacio en línea */
-    max-width: 100px;            /* deja que la imagen tome su tamaño natural o ajusta con max-width */
-    max-height: 80px;       /* limita la altura */
-    height: auto;           /* mantiene proporción */
-    margin: 0;              /* sin margen, alinea a la izquierda */
-    object-fit: contain;    /* ajusta sin deformar */
-    float: left;            /* para que se alinee a la izquierda */
-        }
+    width: 100%;         /* Ocupa todo el ancho */
+    max-height: 80px;    /* Limita la altura */
+    height: auto;        /* Mantiene proporción */
+    object-fit: contain; /* Ajusta sin deformar */
+    margin: 0;
+    display: block;
+    }
 
         .section-image {
             max-width: 100%;
