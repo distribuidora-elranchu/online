@@ -144,13 +144,13 @@ nav ul.nav {
 
         /* Imagen ajustada para logo e imágenes de secciones */
         .img-logo {
-    flex-grow: 1;
-    max-height: 100px;
-    height: auto;
-    object-fit: contain;
-    margin: 0;
-    width: auto;
-   float: left;  /* para que se alinee a la izquierda */
+    display: block;         /* elimina espacio en línea */
+    max-width: 80px;            /* deja que la imagen tome su tamaño natural o ajusta con max-width */
+    max-height: 80px;       /* limita la altura */
+    height: auto;           /* mantiene proporción */
+    margin: 0;              /* sin margen, alinea a la izquierda */
+    object-fit: contain;    /* ajusta sin deformar */
+    float: left;            /* para que se alinee a la izquierda */
 }
 
         .section-image {
