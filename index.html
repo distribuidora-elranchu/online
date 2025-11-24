@@ -4,87 +4,237 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Distribuidora El Ranchú - Productos y Criadero de Peces</title>
-    <!-- Integración de Bootstrap CSS desde CDN para diseño responsivo -->
+    <!-- Bootstrap CSS desde CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Tipografías modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
+    <style>
+        /* Esquema de colores cálido pero sobrio */
+        :root {
+            --color-primario: #2c3e50; /* Azul oscuro */
+            --color-secundario: #18bc9c; /* Verde turquesa cálido */
+            --color-fondo: #f9f9f9;
+            --color-texto: #333333;
+            --color-acento: #e67e22; /* Naranja suave para acentos */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--color-primario);
+        }
+
+        header {
+            background-color: var(--color-primario);
+        }
+
+        nav a {
+            color: white !important;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--color-acento) !important;
+        }
+
+        /* Sección bienvenida */
+        #bienvenida {
+            background: white;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+            margin-bottom: 2rem;
+        }
+
+        #bienvenida h1 {
+            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            color: var(--color-primario);
+        }
+
+        #bienvenida p {
+            font-size: 1.25rem;
+            max-width: 720px;
+            margin: auto;
+            line-height: 1.6;
+            color: var(--color-texto);
+        }
+
+        /* Sección productos con cards */
+        #productos h2 {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgb(0 0 0 / 0.15);
+        }
+
+        .card h4 {
+            color: var(--color-secundario);
+            font-weight: 700;
+        }
+
+        /* Sección sobre nosotros */
+        #sobre-nosotros {
+            background: white;
+            padding: 4rem 0;
+            box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
+            margin-bottom: 2rem;
+        }
+
+        #sobre-nosotros p {
+            max-width: 720px;
+            margin: auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--color-texto);
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: var(--color-primario);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: var(--color-acento);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Imagen ajustada para logo e imágenes de secciones */
+        .img-logo {
+            height: 60px;
+        }
+
+        .section-image {
+            max-width: 100%;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgb(0 0 0 / 0.1);
+        }
+    </style>
 </head>
 <body>
-    <!-- Encabezado con logo y menú de navegación -->
-    <header class="bg-primary text-white p-3">
-        <div class="container d-flex align-items-center justify-content-between">
-            <div>
-                <!-- Isologo original como imagen, usa el archivo local Isologo.pdf convertido o png/jpg -->
-                <img src="Isologo.png" alt="Logo Distribuidora El Ranchú" style="height: 60px;" />
-            </div>
+    <header class="py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <img src="Isologo.png" alt="Logo Distribuidora El Ranchú" class="img-logo" />
             <nav>
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link text-white" href="#bienvenida">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#productos">Productos</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#sobre-nosotros">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bienvenida">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Sección Bienvenida -->
-    <section id="bienvenida" class="text-center py-5 bg-light">
+    <section id="bienvenida">
         <div class="container">
-            <h1 class="mb-4">Bienvenidos a Distribuidora El Ranchú</h1>
-            <p class="lead mx-auto" style="max-width: 700px;">
-                Somos un proyecto familiar dedicado a la venta e importación de productos para mascotas,
-                con especialización en peces de agua fría y cálida. Nuestra pasión y experiencia se reflejan
-                en los criaderos propios y la calidad de productos que ofrecemos a nuestros clientes.
+            <h1>Bienvenidos a Distribuidora El Ranchú</h1>
+            <p>
+                Somos un proyecto familiar que lleva años dedicándose a la venta e importación de productos
+                para mascotas, con especial enfoque en peces de agua fría y cálida. Nuestra pasión y experiencia
+                se reflejan en la calidad de nuestros criaderos y productos que ofrecemos.
             </p>
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                 alt="Peces en acuario" class="section-image" />
         </div>
     </section>
 
-    <!-- Sección Productos destacados -->
     <section id="productos" class="py-5">
         <div class="container">
-            <h2 class="mb-4 text-center">Nuestros Productos y Servicios</h2>
+            <h2>Nuestros Productos y Servicios</h2>
             <p class="text-center mb-5">
-                Contamos con una amplia variedad de artículos para peces y accesorios de alta calidad, importados directamente
-                para garantizar los mejores precios y atención personalizada.
+                Contamos con una amplia gama de artículos para peces, accesorios de calidad importados y un criadero propio.
             </p>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h4>Criadero de Peces</h4>
-                    <p>Desarrollamos criaderos especializados tanto para peces de agua fría como de agua cálida.</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card p-4 text-center">
+                        <h4>Criadero de Peces</h4>
+                        <img src="https://images.unsplash.com/photo-1566981176178-928d6da18c06?auto=format&fit=crop&w=600&q=80"
+                             alt="Criadero de peces" class="section-image" />
+                        <p>
+                            Desarrollamos criaderos especializados para peces de agua fría y cálida,
+                            cuidando cada detalle para garantizar especies saludables.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h4>Alimentos y Accesorios</h4>
-                    <p>Ofrecemos una amplia variedad de alimentos, filtros, decoración y productos para el cuidado de sus peces.</p>
+                <div class="col-md-4">
+                    <div class="card p-4 text-center">
+                        <h4>Alimentos y Accesorios</h4>
+                        <img src="https://images.unsplash.com/photo-1582719478147-3d68d33fbd49?auto=format&fit=crop&w=600&q=80"
+                             alt="Alimentos para peces" class="section-image" />
+                        <p>
+                            Ofrecemos alimento balanceado, filtros, decoración y todo lo necesario para el cuidado
+                            de sus mascotas acuáticas.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h4>Importación Directa</h4>
-                    <p>Contamos con importaciones que nos permiten ofrecer precios competitivos a nuestros clientes mayoristas.</p>
+                <div class="col-md-4">
+                    <div class="card p-4 text-center">
+                        <h4>Importación Directa</h4>
+                        <img src="https://images.unsplash.com/photo-1508898578281-774ac4893e38?auto=format&fit=crop&w=600&q=80"
+                             alt="Contenedores de importación" class="section-image" />
+                        <p>
+                            Importamos directamente productos de calidad para ofrecer precios competitivos
+                            a nuestros clientes mayoristas.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Sobre Nosotros -->
-    <section id="sobre-nosotros" class="py-5 bg-light">
+    <section id="sobre-nosotros">
         <div class="container">
-            <h2 class="mb-4 text-center">Sobre Distribuidora El Ranchú</h2>
-            <p class="mx-auto" style="max-width: 700px; text-align: justify;">
-                Distribuidora El Ranchú es un emprendimiento familiar con más de una década de experiencia en el mercado local.
-                Nuestra misión es brindar productos de calidad y asesoramiento cercano, porque entendemos las necesidades
-                de quienes aman y cuidan a sus mascotas. Creemos en la confianza, transparencia y en construir relaciones duraderas con cada cliente.
+            <h2>Sobre Distribuidora El Ranchú</h2>
+            <p>
+                Distribuidora El Ranchú es un emprendimiento familiar con más de una década de trayectoria.
+                Nuestra misión es brindar productos de calidad y asesoramiento cercano, construyendo relaciones de confianza duraderas.
             </p>
+            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80"
+                 alt="Equipo familiar" class="section-image" />
         </div>
     </section>
 
-    <!-- Pie de página con contacto -->
-    <footer id="contacto" class="bg-primary text-white py-3 mt-5">
-        <div class="container text-center">
+    <footer id="contacto">
+        <div class="container">
             <p>Contacto: Teléfono 0341-6437797 | Email: contacto@elranchu.com.ar</p>
-            <p>Síguenos en Instagram: @DistribuidoraElRanchu</p>
+            <p>Síguenos en Instagram:
+                <a href="https://www.instagram.com/DistribuidoraElRanchu" target="_blank">@DistribuidoraElRanchu</a>
+            </p>
             <p>&copy; 2025 Distribuidora El Ranchú - Todos los derechos reservados</p>
         </div>
     </footer>
 
-    <!-- Integración de Bootstrap JS desde CDN para funcionalidades interactivas, opcional -->
+    <!-- Bootstrap JS bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
